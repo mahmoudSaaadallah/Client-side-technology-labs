@@ -224,3 +224,172 @@ function compact(array) {
   }
   return result;
 }
+//23. Map [1,2,3] to their squares using map.
+var arr8 = [1,2,3];
+console.log(arr8.map(x21 => x21 ** 2));
+
+//24. Filter [5,10,15,20] to keep values >= 12.
+var arr9 = [5,10,15,20];
+console.log(arr9.filter(value => value >= 12));
+
+//25. Reduce [2,4,6] to product.
+var arr10 = [2,4,6];
+console.log(arr10.reduce((acc, x22) => acc * x22, 1))
+
+//26. Implement arraySum(a) using reduce; then implement arraySumLoop(a) using a for loop. Confirm outputs equal.
+function arraySum(a) {
+    return a.reduce((sum, val) => sum + val, 0);
+}
+console.log(arraySum(arr5));
+function arraySumLoop(a) {
+    var sum2 = 0;
+    for (var x23 = 0; x23 < a.length; x23++) {
+        sum2 += a[x23];
+    }
+    return sum2;
+}
+console.log(arraySum(arr5));
+console.log(arraySum(arr5) == arraySum(arr5));
+
+//27. Given ['Ali','Sara','Kareem'] produce ['A','S','K'] (first letters) without using map (use for loop).
+var arr11 = ['Ali', 'Sara', 'Kareem'];
+var arr12 = [];
+for (var x24 = 0; x24 < arr11.length; x24++) {
+    arr12.push(arr11[x24][0]);
+}
+console.log(arr12);
+
+//28. Implement unique(a) returning new array with duplicates removed (no ES6 Set). Complexity target: O(n^2) acceptable; comment how to improve.
+function unique(a) {
+    var arr13 = [];
+    for (var x25 = 0; x25 < a.length; x25++) {
+        var exists = false;
+        for (var x26 = 0; x26 < arr13.length; x26++) {
+        if (a[x25] === arr13[x26]) {
+            exists = true;
+            break;
+        }
+        }
+        if (!exists) {
+        arr13.push(a[x25]);
+        }
+    }
+    return arr13;
+}
+console.log(unique([1,1,2,5,3,2,1,5,6,9,8,0,5,5,4]));
+
+//29. Flatten one level: flatten1([1,[2,3],[4],5]) => [1,2,3,4,5] without using concat inside a loop (manual pushing and detection of Array).
+function flatten1(arr) {
+    var arr14 = [];
+
+    for (var i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+        for (var j = 0; j < arr[i].length; j++) {
+            arr14.push(arr[i][j]);
+        }
+        } else {
+        arr14.push(arr[i]);
+        }
+    }
+    return arr14;
+}
+console.log(flatten1([1,[1],2,[5,3],2,1,5,6,[9],8,0,5,5,4]));
+
+//31. Create object person with name and age; add a new property city after creation.
+var person = {
+    name: "Ali",
+    age: 30
+};
+person.city = "Cairo";
+console.log(person);
+
+//32. Access a property via bracket notation with a dynamic key variable.
+var key = "age";
+console.log(person[key]);
+
+//33. Write function countKeys(obj) returning number of own enumerable properties (use for-in)
+function countKeys(obj) {
+    var count = 0;
+    for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            count++;
+        }
+    }
+    return count;
+}
+console.log(countKeys(person));
+
+//39. List (as comments) 5 different values that coerce to false in ES5.
+/*
+1. false
+2. 0
+3. ""
+4. null
+5. undefined
+*/
+//40. safeToBoolean(v): return true only if v is strictly true, 'true', 1, or '1'; else false.
+function safeToBoolean(v) {
+    return v === true || v === 'true' || v === 1 || v === '1';
+}
+console.log(safeToBoolean(true));
+
+//41. Create a Date for Jan 1, 2025 00:00 local.
+var date = new Date(2025, 0, 1);
+console.log(date);
+
+//42. Get the current year from new Date().
+var currentYear = new Date().getFullYear();
+console.log(currentYear);
+
+//43. Write function daysBetween(d1, d2) returning whole day difference (ignore DST intricacies; ms/(1000*60*60*24)).
+function daysBetween(d1, d2) {
+    var msPerDay = 1000 * 60 * 60 * 24;
+    return Math.floor((d2 - d1) / msPerDay);
+}
+console.log(daysBetween(new Date(2025, 0, 1), new Date(2025, 7, 22)));
+
+//44. Generate a random integer 1..100.
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+console.log(getRandomInt(1, 100));
+
+//45. Round 4.567 to nearest integer, round down, and round up (three results).
+console.log(Math.round(4.567));
+console.log(Math.floor(4.567));
+console.log(Math.ceil(4.567));
+
+//46. randomIntArray(n, min, max): return array of length n with random ints (loop + push).
+function randomIntArray(n, min, max) {
+    var arr = [];
+    for (var i = 0; i < n; i++) {
+        arr.push(getRandomInt(min, max));
+    }
+    return arr;
+}
+console.log(randomIntArray(5, 1, 100));
+
+//56. parsePriceList(str): Given "Apple:2.50;Orange:1.75;Banana:3" return object {Apple:2.5, Orange:1.75, Banana:3} (strings to numbers).
+function parsePriceList(str) {
+    var obj = {};
+    var items = str.split(';');
+    for (var i = 0; i < items.length; i++) {
+        var parts = items[i].split(':');
+        if (parts.length === 2) {
+            obj[parts[0]] = parseFloat(parts[1]);
+        }
+    }
+    return obj;
+}
+console.log(parsePriceList("Apple:2.50;Orange:1.75;Banana:3"));
+
+//57. filterAndSortNumbers(mixedArray): keep only finite numbers then sort ascending (provide sample input and output). Use a numeric compare fn.
+function filterAndSortNumbers(mixedArray) {
+    var filtered = mixedArray.filter(function(item) {
+        return typeof item === "number" && isFinite(item);
+    });
+    return filtered.sort(function(a, b) {
+        return a - b;
+    });
+}
+console.log(filterAndSortNumbers([1, 2, "3", 4, Infinity, 5, NaN, 6, null, 7, 8, 9, 10]));
