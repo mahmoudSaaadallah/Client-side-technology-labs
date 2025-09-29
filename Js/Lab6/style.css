@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+.Ctable {
+  /* display: flex; */
+  width: 90%;
+  margin: auto;
+  margin-top: 3%;
+}
+.Ctable table {
+  border: 1px solid;
+  font-size: 36px;
+  margin: auto;
+}
+.Ctable table th {
+  background-color: rgba(0, 128, 0, 0.96);
+  color: white;
+  width: 300px;
+}
+.Ctable table th .btn .btn1 {
+  transform: rotateX(180deg);
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: rgb(0, 128, 0);
+  border: none;
+  color: white;
+  margin-top: 0;
+}
+.Ctable table th .btn .btn2 {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: rgb(0, 128, 0);
+  border: none;
+  margin-top: 0;
+  color: white;
+}
+.Ctable table tr th .btn {
+  display: inline-block;
+  /* display: flex;*/
+}
+#tb {
+  font-size: 24px;
+}
+.Ctable table tr {
+  height: 50px;
+}

@@ -1,0 +1,19 @@
+@import url('https://fonts.cdnfonts.com/css/lucida-unicode-calligraphy');
+@font-face {
+    font-family: 'Lucida Unicode Calligraphy', sans-serif;
+    src: url('https://fonts.cdnfonts.com/css/lucida-unicode-calligraphy');
+}
+                
+p{
+    font-family: 'Lucida Unicode Calligraphy', sans-serif;
+}
+span{
+    font-family: 'Lucida Unicode Calligraphy', sans-serif;
+}
+div
+{
+        font-family: 'Lucida Unicode Calligraphy', sans-serif;
+}
+div h1{
+    text-align: center;
+}

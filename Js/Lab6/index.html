@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="Ctable">
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Name
+              <div class="btn">
+                <button class="btnName1" onclick="sortTable('name', true)">
+                  ⬆
+                </button>
+                <button class="btnName2" onclick="sortTable('name', false)">
+                  ⬇
+                </button>
+              </div>
+            </th>
+            <th>
+              Position
+              <div class="btn">
+                <button
+                  class="btnPosition1"
+                  onclick="sortTable('position', true)"
+                >
+                  ⬆
+                </button>
+                <button
+                  class="btnPosition2"
+                  onclick="sortTable('position', false)"
+                >
+                  ⬇
+                </button>
+              </div>
+            </th>
+            <th>
+              Office
+              <div class="btn">
+                <button class="btnOffice1" onclick="sortTable('office', true)">
+                  ⬆
+                </button>
+                <button class="btnOffice2" onclick="sortTable('office', false)">
+                  ⬇
+                </button>
+              </div>
+            </th>
+            <th>
+              Age
+              <div class="btn">
+                <button class="btnAge1" onclick="sortTable('age', true)">
+                  ⬆
+                </button>
+                <button class="btnAge2" onclick="sortTable('age', false)">
+                  ⬇
+                </button>
+              </div>
+            </th>
+            <th>
+              Start Date
+              <div class="btn">
+                <button class="btnSD1" onclick="sortTable('startDate', true)">
+                  ⬆
+                </button>
+                <button class="btnSD2" onclick="sortTable('startDate', false)">
+                  ⬇
+                </button>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="tb"></tbody>
+      </table>
+      <script src="main.js"></script>
+    </div>
+  </body>
+</html>
